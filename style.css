@@ -1,0 +1,508 @@
+body{
+    background-color: #ffeedd;
+    margin: 0;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    margin-top: 15px;
+}
+
+#left {
+    flex: 1;
+}
+
+#center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#rightIcons {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+}
+
+#rightIcons img {
+    cursor: pointer;
+    width: 40px;
+    margin-left: 15px;
+}
+
+#myH1 {
+    font-family: Lobster;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: left; 
+    margin: 0;
+}
+#center {
+    display: flex;
+    justify-content: center; 
+}
+
+#mySearchbar{
+    padding: 10px 15px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    border: none;
+
+}
+#container{
+    background-color: hsl(20, 100%, 80%);
+    width: 80%;           
+    min-height: 100vh;    
+    margin: 0 auto;      
+    display: flex;        
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}   
+.typeButtons{
+    display: inline-flex;           
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;              
+    background-color: hsl(12, 100%, 72%);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    padding: 10px 20px;            
+    margin-left: 10px;
+    cursor: pointer;
+    color: hsl(0, 0%, 100%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.typeButtons:hover{
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.typeButtons.active {
+    background-color: hsl(12, 80%, 55%); 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transform: scale(1.05);
+}
+
+#myButtonContainer{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#imgHolder{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+.card {
+    margin-top: 10px;
+    background: hsl(30, 100%, 93%);
+    padding: 15px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 230px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.previewImg {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.recipeInfo {
+    margin-top: 10px;
+}
+
+.recipeCategory {
+    font-size: 0.9rem;
+    color: hsl(14, 100%, 65%);
+    font-weight: bold;
+    margin: 5px 0 2px 0;
+}
+
+.recipeTime {
+    font-size: 0.95rem;
+    color: hsl(0, 0%, 20%); 
+    margin: 0;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+#rightIcons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+}
+
+#darkModeImg, #toggleFilters {
+    cursor: pointer;
+    width: 40px;
+}
+
+#filterContainer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+    padding: 0 10px; 
+}
+
+#filterContainer.open {
+    max-height: 1000px; 
+    opacity: 1;
+    padding: 10px; 
+}
+
+.paginationButtons {
+    border: none;
+    border-radius: 10px;
+    background-color: hsl(12, 100%, 72%);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: Lobster;
+}
+
+.paginationButtons:hover{
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+#showPagination {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding-bottom: 30px;
+    font-family: Lobster;
+}
+
+.filterHeading {
+    font-family: Lobster;
+    font-size: 1.3rem;
+    margin-left: 15px;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: hsl(12, 100%, 72%);
+    cursor: pointer;
+}
+
+.checkboxLabel{
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.checkboxLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.filterGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-bottom: 20px;
+}
+
+/* Recipe Page */
+
+#myDetailHeading {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#myDetailContainer {
+    position: relative;
+    background-color: hsl(20, 100%, 80%);
+    width: 95%;
+    min-height: 100vh;    
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;       
+    justify-content: flex-start;
+    border-radius: 10px;
+}
+
+#homeImg {
+    position: absolute;
+    top: 15px;    
+    left: 15px;   
+    width: 50px;  
+    cursor: pointer;
+    z-index: 10;  
+    transition: transform 0.2s;
+}
+
+@media (max-width: 600px) {
+    #homeImg {
+        width: 40px;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+#homeImg:hover {
+    transform: scale(1.05);
+}
+
+#detailImg {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    #detailImg {
+        max-width: 90%;
+        margin-top: 20px;
+    }
+}
+
+
+#detailLevelTimePortionsContainer {
+    display: flex;
+    gap: 125px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    #detailLevelTimePortionsContainer {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+#detailLevelTimePortionsContainer p {
+    margin: 0;
+}
+
+#detailZutaten {
+    list-style: disc;            
+    padding-left: 20px;          
+    margin-left: 30px;              
+    text-align: left;            
+    align-self: flex-start;      
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 600px) {
+    #detailZutaten {
+        margin-left: 10px;
+        padding-left: 15px;
+        font-size: 1.1rem;
+    }
+}
+
+#detailZutaten li {
+    margin-bottom: 6px;          
+}
+
+#myDetailH2 {
+    display: block;              
+    width: 100%;                 
+    padding: 10px 20px;          
+    box-sizing: border-box;      
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background-color: hsl(12, 100%, 72%);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    #myDetailH2 {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    #myDetailH2 {
+        font-size: 1.3rem;
+        padding: 8px 10px;
+    }
+}
+
+#detailInstructions {
+    margin: 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 600px) {
+    #detailInstructions {
+        margin: 10px;
+        font-size: 1.1rem;
+    }
+}
+
+.detailAngaben {
+    background-color: hsl(12, 100%, 72%);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+#hrefImg {
+    width: 80px;        
+    display: block;       
+    margin: 20px auto 30px auto;  
+    cursor: pointer;     
+    transition: transform 0.2s;
+}
+
+@media (max-width: 600px) {
+    #hrefImg {
+        width: 60px;
+        margin: 15px auto 20px auto;
+    }
+}
+
+#hrefImg:hover {
+    transform: scale(1.05);  
+}
+
+#homeImg {
+    width: 50px;
+}
+
+#randomButtonRdyContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+#randomFilterButtonRdy {
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    background-color: hsl(12, 100%, 72%);
+    font-size: 1.2rem;
+    color: hsl(0, 0%, 100%);
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.15);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#randomFilterButtonRdy:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.15);
+}
+
+#randomButtonFalseMessage {
+    text-align: center;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 1.2rem;
+    color: red;
+}
+
+
+
+@media (max-width: 1024px) {
+    .card {
+        max-width: 200px; 
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    #rightIcons {
+        justify-content: center;
+    }
+
+    #myButtonContainer {
+        flex-wrap: wrap;
+        gap: 8px; 
+    }
+    .typeButtons {
+        font-size: 1.1rem;
+        padding: 8px 14px;
+    }
+
+    .filterGroup {
+        gap: 8px 12px;
+    }
+    .checkboxLabel {
+        font-size: 0.95rem;
+    }
+
+    #container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    #container {
+        width: 100%;
+    }
+    #imgHolder {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: calc(100% - 0px);
+        padding: 18px;
+    }
+
+    .previewImg {
+        height: 180px;
+    }
+}
+
+
+
+
