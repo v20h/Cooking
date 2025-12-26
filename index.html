@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kcooks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Images/favicon.ico" type="image/png" size="32x32">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <div id="left">
+        <h1 id="myH1">Kcooks Rezepte</h1>
+    </div>
+
+    <div id="center">
+        <input type="text" placeholder="Nach Gericht suchen" id="mySearchbar" oninput="searchFunction()">
+    </div>
+
+    <div id="rightIcons">
+        <img src="Images/filterFavicon.png" id="toggleFilters" style="width:40px; cursor:pointer;">
+        <img id="darkModeImg" src="Images/darkmode.png" alt="Dark Mode Toggle" style="cursor:pointer;">
+    </div>
+</div><br>
+
+
+
+<div id="filterContainer" style="display:none;">
+
+    <h3 class="filterHeading">Kategorie</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCategory" value="Thermomix">
+        Thermomix
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCategory" value="Airfryer">
+        Airfryer
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCategory" value="normal">
+        Normal
+        </label>
+    </div>
+
+    <h3 class="filterHeading">Küche</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCountry" value="asian">
+        Asiatisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCountry" value="normal">
+        Standart
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCountry" value="indian">
+        Indisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCountry" value="italian">
+        Italienisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterCountry" value="mexican">
+        Mexikanisch
+        </label>
+    </div>
+    <h3 class="filterHeading">Main or side</h3>
+
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" id="filterMain">
+        Hauptgericht
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" id="filterSide">
+        Beilage
+        </label>
+    </div>
+    <h3 class="filterHeading">Typ</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="pasta">
+        Pasta
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="rice">
+        Reis
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="pizza">
+        Pizza
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="artisanal">
+        Artisanal
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="auflauf">
+        Auflauf
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="soup">
+        Suppe
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="curry">
+        Curry
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="meat">
+        Fleisch & Fisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="potato">
+        Kartoffel
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="filterType" value="vegetable">
+        Gemüse
+        </label>
+    </div>
+
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" id="filterMittwochsklassiker">
+        Mittwochsklassiker
+        </label>
+    </div>
+
+</div>
+
+<div id="myButtonContainer">
+    <button class="typeButtons active"  onclick="showAll()">Alle</button>
+    <button class="typeButtons" onclick="showNormal()">Normal</button>
+    <button class="typeButtons" onclick="showThermomix()">Thermomix</button>
+    <button class="typeButtons" onclick="showAirfryer()">Airfryer</button>
+    <button class="typeButtons" onclick="showRandom()">Random</button>
+</div><br><br>
+
+
+<div id="randomFilterContainer" style="display:none;">
+
+    <h3 class="filterHeading">Kategorie</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCategory" value="Thermomix">
+        Thermomix
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCategory" value="Airfryer">
+        Airfryer
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCategory" value="normal">
+        Normal
+        </label>
+    </div>
+
+    <h3 class="filterHeading">Küche</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCountry" value="asian">
+        Asiatisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCountry" value="normal">
+        Standart
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCountry" value="indian">
+        Indisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCountry" value="italian">
+        Italienisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterCountry" value="mexican">
+        Mexikanisch
+        </label>
+    </div>
+
+    <h3 class="filterHeading">Typ</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="pasta">
+        Pasta
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="rice">
+        Reis
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="pizza">
+        Pizza
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="artisanal">
+        Artisanal
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="auflauf">
+        Auflauf
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="soup">
+        Suppe
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="curry">
+        Curry
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="meat">
+        Fleisch & Fisch
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="potato">
+        Kartoffel
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterType" value="vegetable">
+        Gemüse
+        </label>
+    </div>
+
+    <h3 class="filterHeading">Main or Side</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" id="randomFilterMain">
+        Hauptgericht
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" id="randomFilterSide">
+        Beilage
+        </label>
+    </div>
+
+
+    <h3 class="filterHeading">Schwierigkeit</h3>
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterLevel" value="easy">
+        Leicht
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterLevel" value="medium">
+        Mittel
+        </label>
+
+        <label class="checkboxLabel">
+        <input type="checkbox" class="randomFilterLevel" value="hard">
+        Schwer
+        </label>
+    </div>
+
+
+    <div class="filterGroup">
+        <label class="checkboxLabel">
+        <input type="checkbox" id="randomFilterMittwochsklassiker">
+        Mittwochsklassiker
+        </label>        
+    </div>
+
+
+
+    <p id="randomButtonFalseMessage"></p><br>
+    <div id="randomButtonRdyContainer">
+      <button id="randomFilterButtonRdy" onclick="displayRandom()">Rezept anzeigen</button>  
+    </div>
+    
+</div>
+
+
+<div id="container">
+    <div id="imgHolder">
+        
+    </div>
+</div>
+
+
+<div id="imgHolder"></div>
+
+<div id="pagination"></div>
+  
+    <script src="script.js"></script>
+</body>
+</html>
