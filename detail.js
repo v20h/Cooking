@@ -47,7 +47,6 @@ function showDetail(recipe) {
   // Bild als favicon
   document.querySelector("link[rel~='icon']").href = `${recipe.image}`;
 
-
   //Rezept displayen
   document.getElementById("detailContainer").innerHTML = `
 
@@ -85,7 +84,7 @@ function showDetail(recipe) {
 
   `;
 
-  if (!recipe.appLink) {
+    if (!recipe.appLink) {
     hrefImg.style.display = 'none'
   }
 }
