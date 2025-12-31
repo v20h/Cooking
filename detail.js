@@ -1,3 +1,4 @@
+
 // zeit formatieren
 function timeformatted(time){
     const hours = Math.floor(time / 60);
@@ -82,9 +83,8 @@ function showDetail(recipe) {
 
     </div>
 
-  `;
+  `;}
 
 if (!recipe.appLink) {
   hrefImg.style.display = 'none'
-}
 }
