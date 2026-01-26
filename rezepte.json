@@ -13807,7 +13807,7 @@
   },
 
   {
-    "id": "450",
+    "id": "451",
     "category": "normal",
     "name": "Jägernockerl",
     "image": "Images/Jägernockerl.png",
@@ -13835,7 +13835,7 @@
   },
 
   {
-    "id": "451",
+    "id": "452",
     "category": "Airfryer",
     "name": "Kusprige Parmesan Kartoffeln",
     "image": "Images/Kusprige Parmesan Kartoffeln.png",
@@ -13862,7 +13862,7 @@
   },
 
   {
-    "id": "452",
+    "id": "453",
     "category": "Airfryer",
     "name": "Kartoffel gerieben mit Käse - Braucht dringend einen Namen",
     "image": "Images/Kartoffel gerieben mit Käse - Braucht dringend einen Namen.png",
@@ -13888,7 +13888,7 @@
   },
 
   {
-    "id": "453",
+    "id": "454",
     "category": "normal",
     "name": "Rigatoni al forno",
     "image": "Images/Rigatoni al forno.png",
@@ -13919,7 +13919,7 @@
   },
 
   {
-    "id": "454",
+    "id": "455",
     "category": "normal",
     "name": "Indisches Naan Brot",
     "image": "Images/Indisches Naan Brot.png",
@@ -13947,7 +13947,7 @@
   },
 
   {
-    "id": "455",
+    "id": "456",
     "category": "normal",
     "name": "Spaghetti mit Kürbis Carbonara",
     "image": "Images/Spaghetti mit Kürbis Carbonara.png",
@@ -13976,7 +13976,7 @@
   },
 
   {
-    "id": "456",
+    "id": "457",
     "category": "normal",
     "name": "Flammkuchen",
     "image": "Images/Flammkuchen2.png",
@@ -14009,7 +14009,7 @@
   },
 
   {
-    "id": "457",
+    "id": "458",
     "category": "normal",
     "name": "Pilzrahm Medallions mit Safran und Spätzle",
     "image": "Images/Pilzrahm Medallions mit Safran und Spätzle.png",
@@ -14041,7 +14041,7 @@
   },
 
   {
-    "id": "458",
+    "id": "459",
     "category": "normal",
     "name": "Spaghetti-Spinat-Carbonara mit pochiertem Ei.png",
     "image": "Images/Spaghetti-Spinat-Carbonara mit pochiertem Ei.png.png",
@@ -14071,7 +14071,7 @@
   },
 
   {
-    "id": "459",
+    "id": "460",
     "category": "normal",
     "name": "Hähnchen Erdnuss Wok",
     "image": "Images/Hähnchen Erdnuss Wok.png",
@@ -14101,7 +14101,7 @@
   },
 
   {
-    "id": "460",
+    "id": "461",
     "category": "normal",
     "name": "Hähnchenbrust in Currysahne",
     "image": "Images/Hähnchenbrust in Currysahne.png",
@@ -14130,7 +14130,7 @@
   },
 
   {
-    "id": "461",
+    "id": "462",
     "category": "normal",
     "name": "Feine Pizzafladen mit Feta",
     "image": "Images/Feine Pizzafladen mit Feta.png",
@@ -14162,7 +14162,7 @@
   },
 
   {
-    "id": "462",
+    "id": "463",
     "category": "normal",
     "name": "Gebackene Hack Cannelloni",
     "image": "Images/Gebackene Hack Cannelloni.png",
@@ -14194,7 +14194,7 @@
   },
 
   {
-    "id": "463",
+    "id": "464",
     "category": "normal",
     "name": "Bunte Taco Bowl Al Pastor",
     "image": "Images/Bunte Taco Bowl Al Pastor.png",
@@ -14230,7 +14230,7 @@
   },
 
   {
-    "id": "464",
+    "id": "465",
     "category": "normal",
     "name": "Spaghetti all‘assassina mit Burrata",
     "image": "Images/Spaghetti all‘assassina mit Burrata.png",
@@ -14258,7 +14258,7 @@
   },
 
   {
-    "id": "465",
+    "id": "466",
     "category": "normal",
     "name": "Chicken Onigiri",
     "image": "Images/Chicken Onigiri.png",
@@ -14291,7 +14291,7 @@
   },
 
   {
-    "id": "466",
+    "id": "467",
     "category": "normal",
     "name": "Fried rice",
     "image": "Images/Fried rice.png",
@@ -14323,5 +14323,584 @@
     "portions": "6",
     "appLink": "https://www.tiktok.com/@chefkeysh/video/7280316285181791534?q=chefkeysh&t=1766410587763",
     "prepTime": 50
+  },
+
+  {
+    "id": "468",
+    "category": "Airfryer",
+    "name": "Entenbrust mit Rotwein-Pflaumensauce und Sellerie-Karfiolcreme",
+    "image": "Images/Entenbrust mit Rotwein-Pflaumensauce und Sellerie-Karfiolcreme.png",
+    "ingredients": [
+    "Entenbrustfilet: 2Stk.",
+    "Wacholderbeeren: 8Stk.",
+    "Oliven: 8El",
+    "Frischer Thymian: 3 Zweige",
+    "Schalotten: 6Stk.",
+    "Kalbsfond: 200g",
+    "Rotwein: 400g",
+    "Pflaumenmousse: 4El",
+    "Balsamico Essig schwarz: 2El"
+    ],
+    "instructions": "Die Haut der Entenbrüste rautenförmig einschneiden. Dadurch zieht sich das Fleisch beim Garen nicht zusammen und überschüssiges Fett kann austreten. Dabei darauf achten, nur die Haut zu schneiden und das Muskelfleisch nicht zu verletzen, da die Entenbrust sonst trocken werden kann. \nSalz, Pfefferkörner und Wacholderbeeren in den Mixtopf geben und 5 Sek./Stufe 8 zerkleinern. Die Gewürzmischung in eine kleine Schüssel umfüllen, mit Olivenöl verrühren und die Entenbrüste rundherum damit einreiben. Je einen Thymianzweig zu jeder Entenbrust legen. \nSchalotten zusammen mit dem Zucker in einer Pfanne langsam karamellisieren. Kalbsfond, Rotwein und Pflaumenmus zugeben. Dunklen Balsamico, 1 TL Salz und Pfeffer einrühren und die Sauce bei mittlerer Hitze reduzieren lassen. \nWährenddessen die Entenbrüste im Airfryer 16 Minuten bei 190 °C garen. Anschließend etwas von dem ausgelassenen Entenfett in die Sauce geben und nochmals abschmecken.",
+    "type": "meat",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "normal",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "4",
+    "prepTime": 60
+  },
+
+  {
+    "id": "469",
+    "category": "normal",
+    "name": "Trüffelpasta",
+    "image": "Images/trüffelpasta.png",
+    "ingredients": [
+    "Spaghetti: 250g",
+    "Trüffelbutter: 30g",
+    "Parmesan: 50g",
+    "Creme Fraiche: 1-2El",
+    "Weißer Trüffel: 1 Stk.",
+    "Schwarzer Trüffel: 1 Stk.",
+    "Salz: Stk.",
+    "Pfeffer: Stk."
+    ],
+    "instructions": "Einen großen Topf mit Wasser aufsetzen, großzügig salzen und die Pasta hineingeben. Während die Pasta kocht, eine Pfanne bei mittlerer Hitze aufstellen und etwas normale Butter darin schmelzen lassen. \nIn der Zwischenzeit den Parmesan fein reiben. Sobald die Butter anfängt, leicht nussig zu werden, den Trüffel sowie den Knoblauch hineinreiben. Mit frisch gemahlenem Pfeffer würzen. \nDie Pfanne mit 1–2 Kellen Pastawasser ablöschen und Crème fraîche unterrühren, bis eine cremige Sauce entsteht. \nKurz bevor die Pasta al dente ist, direkt aus dem Topf in die Pfanne geben. Optional jetzt noch etwas Trüffelbutter hinzufügen. \nZum Schluss den geriebenen Parmesan unterheben, alles gut vermengen und abschmecken. Sofort servieren und genießen!",
+    "type": "pasta",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7589714827979902241?_r=1&_t=ZG-92kQEqYjqu9",
+    "prepTime": 20
+  },
+
+  {
+    "id": "470",
+    "category": "normal",
+    "name": "Tortellini in Schinken-Sahne-Sauce",
+    "image": "Images/Tortellini in Schinken-Sahne-Sauce.png",
+    "ingredients": [
+    "Butter: 1El",
+    "Prosciutto: 150g",
+    "Schalotte: 1 Stk.",
+    "Knoblauchzehe: 1 Stk.",
+    "Weißwein: 50ml",
+    "Sahne: 1 Becher",
+    "Parmesan: 1 handvoll",
+    "Eigelb: 1 Stk."
+    ],
+    "instructions": "Butter in der Pfanne schmelzen. Pancetta würfeln und in der Butter leicht Farbe nehmen lassen. \nSchalotte und Knoblauch würfeln und in der Butter kurz anschwitzen. Mit Weißwein ablöschen. \nFast vollständig reduzieren lassen. Währenddessen Topf mit Wasser aufstellen und die Tortellini gar kochen. \nParmesan mit Sahne und ggf. 1 Eigelb vermengen und aufgießen. Aufkochen lassen, Hitze reduzieren und mit Pfeffer, Muskat und Salz würzen. \nTortellini in die Sauce geben und mit Basilikum servieren.",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7580716577604062486?_r=1&_t=ZG-92kQGlD2dqC",
+    "prepTime": 15
+  },
+
+  {
+    "id": "471",
+    "category": "normal",
+    "name": "Cremige Burrata Pasta",
+    "image": "Images/Cremige Burrata Pasta.png",
+    "ingredients": [
+    "Kirschtomaten: 1 Handvoll",
+    "Tomaten: 1 Dose",
+    "Schalotten: 2Stk.",
+    "Knoblauchzehen: 3Stk.",
+    "Burratontren: 2Stk.",
+    "Thymian: 2 Zweige",
+    "Grobes Meersalz: 2 Prisen",
+    "Olivenöl: 2El",
+    "Zucker: 1 Prise",
+    "Pfeffer"
+    ],
+    "instructions": "Den Knoblauch köpfen, die Tomaten halbieren und die Zwiebeln grob schneiden. Das gesamte Gemüse in eine Auflaufform geben und mit Olivenöl, Salz und einer kleinen Prise Zucker vermengen. \nIm Ofen bei ca. 200 °C für 20–25 Minuten rösten, bis alles weich ist und leichte Röstaromen bekommt. \nAnschließend das Ofengemüse in einen Mixer geben und zusammen mit der Burrata fein pürieren. Mit Basilikum, Thymian und Pfeffer abschmecken. \nDie fertige Pastasauce in eine große Pfanne geben und sanft erhitzen. Währenddessen reichlich Wasser für die Pasta aufsetzen und die Nudeln fast al dente kochen. \nDie Pasta direkt aus dem Wasser in die Sauce geben und alles gut vermengen, sodass sich Sauce und Nudeln verbinden. \nZum Schluss die Pasta mit Burrata servieren und genießen",
+    "type": "pasta",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7569660846150929686?_r=1&_t=ZG-92kQO3shFc9",
+    "prepTime": 30
+  },
+
+  {
+    "id": "472",
+    "category": "normal",
+    "name": "Soja Eier",
+    "image": "Images/Soja Eier.png",
+    "ingredients": [
+    "Eier: 6Stk.",
+    "Sojasauce: 200ml",
+    "Mirin: 160ml",
+    "Zucker: 1Tl"
+    ],
+    "instructions": "Die Eier in kochendem Wasser genau 6 Minuten und 30 Sekunden kochen. Währenddessen in einem Behälter Sojasauce, Mirin und Zucker gut miteinander vermischen. \nNach Ende der Kochzeit die Eier sofort in eiskaltes Wasser geben, um den Garprozess zu stoppen. Anschließend vorsichtig schälen. \nDie geschälten Eier in die vorbereitete Sauce legen, sodass sie gut bedeckt sind, und mindestens 3 Stunden ziehen lassen.",
+    "type": "artisanal",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": false,
+    "sideDish": true,
+    "portions": "6",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7567049207463382294?_r=1&_t=ZG-92kQOr1aMxk",
+    "prepTime": 10
+  },
+
+  {
+    "id": "473",
+    "category": "normal",
+    "name": "Pasta mit Salsiccia und Pilzen",
+    "image": "Images/Pasta mit Salsiccia und Pilzen.png",
+    "ingredients": [
+    "Pasta: 200g",
+    "Salsiccia: 3Stk.",
+    "Pilze (Champignons, braune oder gemischt mit Kräuterseitlingen/Steinpilzen): 250g",
+    "Olivenöl: 2El",
+    "Thymian oder Majoran: 2 Zweige",
+    "Schalotte: Stk.",
+    "Karotte: 1klein",
+    "Knoblauchzehen: 2Stk.",
+    "Weißwein (trocken): 100ml",
+    "Marsala oder Sherry: 50ml",
+    "Brühe: Stk.",
+    "Erbsen: 1Handvoll",
+    "Parmesan",
+    "Petersilie oder glatte Kräuter",
+    "Salz",
+    "Schwarzer Pfeffer"
+    ],
+    "instructions": "Die Wurstmasse aus der Salsiccia entfernen. Eine Pfanne bei mittlerer Hitze aufstellen und Olivenöl hineingeben. Die Salsiccia krümelig anbraten. \nWährenddessen Karotte, Zwiebel, Fenchel und Knoblauch in kleine Würfel schneiden. Die Pilze in dicke Scheiben schneiden. \nDas angebratene Fleisch aus der Pfanne nehmen und die Pilze anrösten. Anschließend Karotte, Fenchel, Zwiebel und Knoblauch hinzufügen und kurz anbraten. \nMit Weißwein und Brühe ablöschen und köcheln lassen, bis der Wein vollständig verkocht ist. Danach Sahne hinzufügen und alles mit Salz, Pfeffer und Majoran würzen. \nErbsen und die gebratene Salsiccia wieder in die Pfanne geben und gut verrühren. \nIn der Zwischenzeit in einem großen Topf Pasta kochen. Sobald sie fertig ist, die Pasta in die Sauce geben und alles gut vermengen. Mit viel frisch geriebenem Parmesan servieren und genießen!",
+    "type": "pasta",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7560350605294701846?_r=1&_t=ZG-92kQPM3HiHh",
+    "prepTime": 30
+  },
+
+  {
+    "id": "474",
+    "category": "normal",
+    "name": "Gebratene Asia Nudeln",
+    "image": "Images/Gebratene Asia Nudeln.png",
+    "ingredients": [
+    "Nudeln Asia (Chow-Mein oder Mie-Nudeln): 1 Packung",
+    "Sojasauce: 2El",
+    "Austernsauce: 2El",
+    "Ketjap Manis: 1El",
+    "Karotte: 1Stk.",
+    "Zwiebel: 1Stk.",
+    "Lauch: 1/4 Stange",
+    "Kohl: 2-3 Blätter",
+    "Lauchzwiebel: 1 Stange",
+    "Brokkoli, Pak Choi, Chili, Bambussprossen, Sojasprossen etc.",
+    "Sesamöl: 1Tl"
+    ],
+    "instructions": "Tipp: \nKocht eure Nudeln schon am Vortag. Wenn sie direkt aus dem Wasser in die Pfanne kommen sind sie meistens zu klebrig und die Nudeln bleiben nicht so schön voneinander getrennt. Außerdem bekommen sie durch das Abkühlen der Stärke wieder eine festere Struktur und nehmen die Sauce und Aromen besser auf. \nIhr entscheidet selbst, welches Gemüse ihr verwenden möchtet. Karotten in dünne Streifen schneiden, Lauch in Halbringe, Kohl in dünne Streifen und Zwiebeln in lange Lamellen schneiden. \nIn einer Pfanne Öl erhitzen und Karotten sowie Kohl bei hoher Hitze ca. 1 Minute anbraten. Dann Zwiebeln und Lauch hinzufügen und kurz mitbraten. \nDie Nudeln dazugeben und ebenfalls kurz anbraten. Mit Sojasauce, Austernsauce, Ketchup Manis und geröstetem Sesamöl würzen. Alles gut vermengen, heiß servieren und genießen",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7440152476403207446?_r=1&_t=ZG-92kQgMXMPq4",
+    "prepTime": 30
+  },
+
+  {
+    "id": "475",
+    "category": "normal",
+    "name": "Knuspriges Hähnchen",
+    "image": "Images/Knuspriges Hähnchen.png",
+    "ingredients": [
+    "Hühnerbrust: 1-2Stk.",
+    "Sojasauce: 2El",
+    "Sprudelwasser: 120",
+    "Milch: 100",
+    "Mehl: 120g",
+    "Stärke: 30g",
+    "Backpulver: 1Tl",
+    "Öl: 1El",
+    "Salz: Stk.",
+    "Neutrales Öl zum Frittieren: 1 Liter"
+    ],
+    "instructions": "Das Chicken horizontal halbieren, mit Sojasauce marinieren und 20 Minuten ziehen lassen. \nFür den Backteig Mehl, Stärke, Backpulver, MSG, Milch und Sprudelwasser zu einem glatten Teig verrühren. Anschließend mit Salz und Pfeffer würzen. Bei Bedarf etwas Knoblauchöl unterrühren. \nIn einem Topf Öl erhitzen. Das marinierte Chicken zuerst in Mehl wenden, dann durch den Backteig ziehen. \nSobald das Öl ca. 160 °C erreicht hat, das Hühnchen frittieren, bis es goldbraun und knusprig ist. Herausnehmen, kurz abtropfen lassen und servieren.",
+    "type": "meat",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": false,
+    "sideDish": true,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7439022566917950753?_r=1&_t=ZG-92kQh04k3xx",
+    "prepTime": 30
+  },
+
+  {
+    "id": "476",
+    "category": "normal",
+    "name": "Tonkatsu",
+    "image": "Images/Tonkatsu.png",
+    "ingredients": [
+    "Schweinekoteletts ohne Knochen: 2Stk.",
+    "Eier: 2Stk.",
+    "Ming Chu Pankomehl",
+    "Mehl",
+    "Jasminreis: Stk.",
+    "Öl zum Frittieren: Stk.",
+    "Salz: Stk.",
+    "Frisch gemahlener Pfeffer: Stk."
+    ],
+    "instructions": "Im Gegensatz zu klassischen Schnitzeln wird Tonkatsu aus zarten Schweinekoteletts zubereitet. Diese werden zuerst platt geklopft – das macht das Fleisch besonders zart und sorgt dafür, dass eure Mahlzeit einfach wunderbar schmeckt. Danach würzt ihr das Fleisch auf beiden Seiten mit Salz und frisch gemahlenem Pfeffer. \nJetzt geht’s ans Panieren: Das Fleisch wird zuerst in Mehl gewälzt, dann in geschlagenem Ei und zum Schluss in japanischem Panko-Paniermehl – das sorgt für die extra knusprige Kruste. Wichtig: Japanisches Panko hat eine schöne, grobe Struktur und macht das Schnitzel besonders knusprig. \nErhitzt nun euer Öl in einem tiefen Topf und frittiert das Kotelett von beiden Seiten goldbraun. Nach der ersten Hälfte der Frittierzeit nehmt ihr das Fleisch heraus und lasst es kurz abkühlen – so wird euer Tonkatsu noch knuspriger, wenn ihr es gleich ein zweites Mal frittieren könnt. \nZum Servieren schneidet ihr euer Tonkatsu in Scheiben und reicht es mit duftendem Jasminreis, Omelett, frischem Frühlingslauch und natürlich der klassischen, selbstgemachten Tonkatsu-Soße – ein echter Genuss!",
+    "type": "rice",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "3-4",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7374806112622693664?_r=1&_t=ZG-92kQptnFdnl",
+    "prepTime": 45
+  },
+
+  {
+    "id": "477",
+    "category": "normal",
+    "name": "Burrata Pasta",
+    "image": "Images/Burrata Pasta.png",
+    "ingredients": [
+    "Kirschtomaten: 1 Handvoll",
+    "Knoblauchzehe: 1Stk.",
+    "Schalotte: 1Stk.",
+    "Burrata: Stk.",
+    "Thymian: 2 Zweige",
+    "Grobes Meersalz: 2 Prisen",
+    "Olivenöl: 2El",
+    "Zucker: 1 kleine Prise",
+    "Frisch gemahlener Pfeffer"
+    ],
+    "instructions": "Kocht eure Pasta. Stellt eure Sauteuse auf und lasst sie heiß werden. Schwitzt euren Knoblauch und die Schalotte in 2 El Olivenöl an. \nViertelt nebenbei eure Kirschtomaten und gebt sie sofort hinzu. Außerdem Salz, Thymian und Pfeffer sowie eine kleine Prise Zucker.  \nGebt nach 3-4 Minuten alles in einen Mixer und püriert die Soße gemeinsam mit einer Burrata Kugel zu einer cremigen Sauce. \nSchmeckt sie eventuell noch einmal mit etwas Salz ab und genießt sie mit eurer gekochten Pasta.",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@brot.mit.ei/video/7259397390212418843?_r=1&_t=ZG-92kQvyjzjJh",
+    "prepTime": 15
+  },
+
+  {
+    "id": "478",
+    "category": "normal",
+    "name": "Creamy Bacon Pasta",
+    "image": "Images/Creamy bacon pasta.png",
+    "ingredients": [
+    "Butter: 1tsp",
+    "Zwiebel: 1Stk.",
+    "Honig: 1tsp",
+    "Knoblauchzehe: 1Stk.",
+    "Tomatenmark: 1tsp",
+    "Bacon gewürfelt: 150g",
+    "Sahne: 150ml",
+    "Frischkäse: 1tsp",
+    "Pfeffer",
+    "Oregano",
+    "Paprikapulver",
+    "Salz",
+    "Gouda gerieben: 100g",
+    "Pasta nach Wahl: 200g"
+    ],
+    "instructions": "Butter in einer heißen Pfanne schmelzen lassen und die Zwiebeln darin anbraten, bis sie glasig sind. Honig hinzufügen und kurz karamellisieren lassen. Dann den Knoblauch dazugeben. \nAnschließend Tomatenpaste und Bacon in die Pfanne geben und alles kurz anrösten. Mit Sahne ablöschen und nach kurzer Zeit den Frischkäse unterrühren, bis eine cremige Sauce entsteht. \nMit Pfeffer, Oregano, Salz und Paprikapulver würzen. Den Gouda einrühren und die Sauce leicht einkochen lassen. \nZum Schluss die Pasta unterheben, alles gut vermischen und heiß servieren.",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@chefbite0/video/7576682390819507478?_r=1&_t=ZG-92kRAVG8Hrd",
+    "prepTime": 25
+  },
+
+  {
+    "id": "479",
+    "category": "normal",
+    "name": "Teriyaki Lachs Pasta",
+    "image": "Images/teriyaki salmon pasta.png",
+    "ingredients": [
+    "Butter: 1tbsp",
+    "Lachs: 300g",
+    "Knoblauchzehen: 2Stk.",
+    "Sojasauce: 3tbsp",
+    "Honig: 1tbsp",
+    "Zitronensaft: 1/2Stk.",
+    "Schwarzer Pfeffer",
+    "Zwiebel: 1Stk.",
+    "Sahne: 200ml",
+    "Salz: 1tsp",
+    "Kreuzkümmel: 1tsp",
+    "Chiliflocken: 1tsp",
+    "Geräuchertes Paprikapulver: 1tsp",
+    "Schwarzer Pfeffer extra",
+    "Petersilie frisch gehackt: 1 Handvoll",
+    "Parmesan: Stk.",
+    "Pasta nach Wahl: 200g"
+    ],
+    "instructions": "Die Butter in einer Pfanne bei mittlerer Hitze schmelzen. Den Lachs, geriebenen Knoblauch, Sojasauce, Honig, Zitronensaft und schwarzen Pfeffer hinzufügen. Den Lachs anbraten, bis er schön glasiert und durchgegart ist. Anschließend aus der Pfanne nehmen und beiseitestellen. \nIn derselben Pfanne die gehackte Zwiebel anbraten, bis sie weich ist. Die Sahne hineingießen und mit Salz, Kreuzkümmel, Chiliflocken, geräuchertem Paprikapulver und schwarzem Pfeffer würzen. \nDie Sauce bei niedriger Hitze sanft köcheln lassen, bis sie cremig ist. Währenddessen die Pasta nach Packungsanweisung kochen. \nDie Pasta zur Sauce geben und gut vermengen. Zum Schluss Petersilie und geriebenen Parmesan unterrühren. \nDie Pasta auf Tellern anrichten und den Lachs obenauf legen. Guten Appetit.",
+    "type": "pasta",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@chefbite0/video/7586723484420574486?_r=1&_t=ZG-92kRCeVgDWD",
+    "prepTime": 40
+  },
+
+  {
+    "id": "480",
+    "category": "normal",
+    "name": "Garlic Butter Pasta",
+    "image": "Images/Garlic Butter Pasta.png",
+    "ingredients": [
+    "Butter: 50g",
+    "Knoblauchzehen: 4Stk.",
+    "Zwiebel: 1Stk.",
+    "Honig: Stk.",
+    "Sahne: 200ml",
+    "Petersilie frisch: Stk.",
+    "Limette: 1Stk.",
+    "Zucker: 1tsp",
+    "Salz: 1tsp",
+    "Knoblauchpulver: 1/2tsp",
+    "Schwarzer Pfeffer: 1tsp",
+    "Oregano: 1tsp",
+    "Basilikum: 1tsp",
+    "Pasta nach Wahl: 200g"
+    ],
+    "instructions": "Butter in einer Pfanne erhitzen und bräunen, bis sie nussig duftet. Den Knoblauch hinzufügen, kurz goldbraun anbraten und anschließend aus der Pfanne nehmen. In derselben Pfanne die Zwiebeln anbraten und den Honig unterrühren. Dann die Sahne hinzugeben sowie Petersilie einstreuen. \nDie Limette auspressen und den Saft zur Sauce geben. Mit Zucker, Salz, Knoblauchpulver, schwarzem Pfeffer, Oregano und Basilikum würzen. \nDie Sauce kurz köcheln lassen, bis sie cremig ist. Zum Schluss die Pasta unterheben, alles gut vermengen und sofort servieren. \n",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@chefbite0/video/7585569684565675286?_r=1&_t=ZG-92kRCVJxhQm",
+    "prepTime": 30
+  },
+
+  {
+    "id": "481",
+    "category": "normal",
+    "name": "Asiatische Bratnudeln",
+    "image": "Images/Asiatische Bratnudeln.png",
+    "ingredients": [
+    "Knoblauch: 1tsp",
+    "Chili: 1tsp",
+    "Sojasauce: 1tbsp",
+    "Honig: 1tbsp",
+    "Pfeffer: 1Stk.",
+    "Asiatische Nudeln: 250g",
+    "Zwiebel: 1Stk.",
+    "Karotte: 1Stk.",
+    "Salz: 1/2tsp",
+    "Pfeffer: 1/2tsp",
+    "Sojasauce: 2tbsp",
+    "Shrimps: 200g"
+    ],
+    "instructions": "In einer Pfanne Olivenöl erhitzen und die Shrimps darin anbraten. Mit Chilipulver, Knoblauch, Sojasauce, Honig und Pfeffer würzen. \nDie Shrimps aus der Pfanne nehmen und beiseitestellen. n derselben Pfanne die Zwiebeln kurz anbraten, dann die Karotten hinzufügen. \nNach kurzer Zeit die Nudeln dazugeben und alles gut vermengen. Mit Salz, Pfeffer und Sojasauce abschmecken. \nZum Schluss die Shrimps wieder in die Pfanne geben, alles kurz durchschwenken - fertig.",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@chefbite0/video/7581546319903345942?_r=1&_t=ZG-92kRH75TxnF",
+    "prepTime": 20
+  },
+
+  {
+    "id": "482",
+    "category": "Airfryer",
+    "name": "Knusprige Tortelini",
+    "image": "Images/Knusprige Tortelini.png",
+    "ingredients": [
+    "Tortellini",
+    "Öl",
+    "Salz",
+    "Paprikapulver"
+    ],
+    "instructions": "Gekochte Tortellini mit etwas Öl, Salz und geräucherter Paprika vermengen und dann bei 180° für circa 20 Minuten in den Airfryer geben",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": false,
+    "sideDish": true,
+    "portions": "",
+    "appLink": "https://www.tiktok.com/@manasmenu/video/7571176280557702422?_r=1&_t=ZG-92kRRHJmo2D",
+    "prepTime": 20
+  },
+
+  {
+    "id": "483",
+    "category": "Airfryer",
+    "name": "Knusprige Nudeln im Airfryer",
+    "image": "Images/Knusprige Nudeln im Airfryer.png",
+    "ingredients": [
+    "Nudeln nach Wahl",
+    "Öl",
+    "Salz",
+    "Paprikapulver"
+    ],
+    "instructions": "Gekochte Pasta mit Olivenöl, Salz und Paprikagewürz vermengen. Dann für circa 20 Minuten bei 180° in den Airfryer geben.",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": false,
+    "sideDish": true,
+    "portions": "",
+    "appLink": "https://www.tiktok.com/@manasmenu/video/7577416502417050902?_r=1&_t=ZG-92kRWUWz8HB",
+    "prepTime": 20
+  },
+
+  {
+    "id": "484",
+    "category": "normal",
+    "name": "Chicken Alfredo",
+    "image": "Images/Chicken Alfredo.png",
+    "ingredients": [
+    "Hühnerbrust groß: 1Stk.",
+    "Salz",
+    "Pfeffer",
+    "Olivenöl",
+    "Butter",
+    "Knoblauchzehen: 3-4Stk.",
+    "Milch: 500ml",
+    "Hühnerbrühe: 240-250ml",
+    "Pasta: 225g",
+    "Parmesan frisch gerieben: 50g",
+    "Frischkäse oder Mascarpone: 2-3tbsp",
+    "Muskatnuss: 1 Prise"
+    ],
+    "instructions": "Das Hähnchen in Olivenöl und Butter bei mittlerer bis hoher Hitze von beiden Seiten 3-4 Minuten goldbraun anbraten. Aus der Pfanne nehmen, in Scheiben schneiden und die Röstaromen in der Pfanne belassen. \nDie Hitze reduzieren und bei Bedarf noch einen kleinen Stich Butter hinzufügen. Den Knoblauch 20-30 Sekunden anschwitzen, bis er duftet, aber nicht bräunt. \nMilch und Hühnerbrühe angießen, leicht mit Salz und Pfeffer würzen und alles sanft köcheln lassen. \nDie trockene Pasta direkt in die Pfanne geben und 8-12 Minuten unter häufigem Rühren garen, damit nichts ansetzt. Falls die Flüssigkeit zu stark reduziert, etwas Wasser nachgießen. \nDen Parmesan unterrühren. Optional Frischkäse oder Mascarpone hinzufügen und mit einer kleinen Prise Muskatnuss abschmecken. Die Sauce sollte glatt, cremig und glänzend sein. \nZum Schluss das geschnittene Hähnchen wieder in die Pfanne geben, vorsichtig unterheben und 1-2 Minuten erwärmen. Mit gehackter Petersilie vollenden und servieren",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@alexcookjoy/video/7573143557289102624?_r=1&_t=ZG-92kRaJ9apma",
+    "prepTime": 10
+  },
+
+  {
+    "id": "485",
+    "category": "normal",
+    "name": "Pesto Tomaten Pasta",
+    "image": "Images/Pesto Tomaten Pasta.png",
+    "ingredients": [
+    "Pasta (Rigatoni, Penne etc.): 225g",
+    "Kirschtomaten: 250-270g",
+    "Knoblauchzehen: 4Stk.",
+    "Olivenöl oder Butter: 4tbsp",
+    "Weißwein: 60ml",
+    "Chiliflocken: 1tsp",
+    "Schwarzer Pfeffer: 1-2tsp",
+    "Salz",
+    "Parmesan gerieben: 60g",
+    "Basilikumpesto: 2-3tbsp"
+    ],
+    "instructions": "Die Pasta in reichlich gut gesalzenem Wasser al dente kochen. 120 ml (½ Tasse) Pastawasser abschöpfen und beiseitestellen, dann die Pasta abgießen. \nEine Pfanne bei mittlerer Hitze erhitzen und Olivenöl oder Butter hineingeben. Den Knoblauch hinzufügen und 30–40 Sekunden anschwitzen, bis er duftet, aber keine Farbe annimmt. \nDie Kirschtomaten, Chiliflocken, schwarzen Pfeffer und Salz dazugeben und 4–6 Minuten braten, bis die Tomaten weich werden und aufplatzen. \nMit Weißwein ablöschen (alternativ Wasser) und 1–2 Minuten köcheln lassen, bis die Flüssigkeit leicht reduziert ist. \nDie Pasta in die Pfanne geben, Pesto und einen Schuss Pastawasser hinzufügen und alles gut vermengen. Die Hitze reduzieren, Parmesan unterrühren und mischen, bis die Sauce glänzend und cremig ist. \nAbschmecken und bei Bedarf Salz, Pfeffer und Chili anpassen. Mit extra Parmesan und frisch gemahlenem Pfeffer servieren",
+    "type": "pasta",
+    "level": "medium",
+    "mittwochsklassiker": false,
+    "country": "italian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@alexcookjoy/video/7584848954957778209?_r=1&_t=ZG-92kReQyj5pR",
+    "prepTime": 30
+  },
+
+  {
+    "id": "486",
+    "category": "normal",
+    "name": "Honig-Knoblauch Hähnchen",
+    "image": "Images/Honig-Knoblauch Hähnchen.png",
+    "ingredients": [
+    "Hühnerbrust: 450g",
+    "Maisstärke: 16g",
+    "Olivenöl: 1tbsp",
+    "Salz",
+    "Schwarzer Pfeffer",
+    "Honig: 60g",
+    "Sojasauce: 2tbsp",
+    "Reisessig: 1tbsp",
+    "Wasser: 1tbsp",
+    "Knoblauchzehen: 3Stk.",
+    "Chiliflocken: 1/2tsp",
+    "Sesamöl: 1tsp"
+    ],
+    "instructions": "Tipp: \nMit Reis servieren. \nDas Hähnchen in kleine, gleichmäßige Stücke schneiden. Mit Salz und Pfeffer würzen und anschließend leicht mit Speisestärke vermengen, sodass alles dünn bedeckt ist. \nIn einer Pfanne Olivenöl bei mittlerer bis hoher Hitze (ca. 190 °C) erhitzen. Das Hähnchen in einer Lage in die Pfanne geben und 4–5 Minuten braten, dabei gelegentlich wenden, bis es goldbraun und durchgegart ist. \nDie Hitze etwas reduzieren und Honig, Sojasauce, Reisessig, Wasser, Knoblauch und Chiliflocken hinzufügen. Alles gut verrühren und 1–2 Minuten köcheln lassen, bis die Sauce glänzend und leicht dick ist. \nDas Hähnchen in der Sauce wenden und 1 weitere Minute ziehen lassen, bis alles schön klebrig überzogen ist. Zum Schluss optional Sesamöl unterrühren. \nMit Sesamsamen und Frühlingszwiebeln garnieren und servieren.",
+    "type": "meat",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@alexcookjoy/video/7577023408031010080?_r=1&_t=ZG-92kRh6trbcH",
+    "prepTime": 30
+  },
+
+  {
+    "id": "487",
+    "category": "normal",
+    "name": "Hähnchen Ramen Nudeln",
+    "image": "Images/Hähnchen Ramen Nudeln.png",
+    "ingredients": [
+    "Gekochtes Hähnchenfleisch gezupft: 120g",
+    "Edamame: 80g",
+    "Süßer Mais: 80g",
+    "Zwiebel klein: 60g",
+    "Baby Pak Choi: 1-2Stk.",
+    "Pflanzenöl: 1El",
+    "Instant Ramen Nudeln: 2Stk.",
+    "Nudelwasser: 60ml"
+    ],
+    "instructions": "Die Nudeln in kochendem Wasser (100 °C) 2-3 Minuten garen. Abgießen und 60 ml (¼ Tasse) Kochwasser beiseitestellen. \nIn einer Pfanne Öl bei mittlerer bis hoher Hitze (ca. 190 °C) erhitzen. Die Zwiebel hinzufügen und 1 Minute anbraten. Danach Edamame, Mais und optional Pak Choi dazugeben und 2–3 Minuten mitbraten. \nDas gegarten Chicken hinzufügen und 1 Minute vermengen. \nSojasauce, optional Austernsauce, Honig, Reisessig, Sesamöl, Knoblauch, Ingwer und Chili einrühren und ca. 30 Sekunden durchschwenken. \nDie Nudeln in die Pfanne geben, einen Schuss Nudelwasser hinzufügen und alles vermengen, bis die Sauce glänzend ist und gut haftet. Mit gehackten Erdnüssen, Frühlingszwiebeln und Limette toppen und servieren",
+    "type": "pasta",
+    "level": "easy",
+    "mittwochsklassiker": false,
+    "country": "asian",
+    "mainDish": true,
+    "sideDish": false,
+    "portions": "2",
+    "appLink": "https://www.tiktok.com/@alexcookjoy/video/7576787362106117409?_r=1&_t=ZG-92kRhhTr0TI",
+    "prepTime": 30
   }
 ]
