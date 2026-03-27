@@ -224,14 +224,11 @@ input[type="checkbox"] {
 
 .checkboxLabel{
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-.checkboxLabel {
-    display: inline-flex;
+   display: inline-flex;
     align-items: center;
     gap: 8px;
     font-family: 'Inter', system-ui, sans-serif;
-    cursor: pointer;
+    cursor: pointer;   
 }
 
 .filterGroup {

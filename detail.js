@@ -83,8 +83,8 @@ function showDetail(recipe) {
 
     </div>
 
-  `;}
+  `;
 
 if (!recipe.appLink) {
   hrefImg.style.display = 'none'
-}
+}}
