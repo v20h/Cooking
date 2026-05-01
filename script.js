@@ -17,6 +17,59 @@ fetch("rezepte.json")
 
 
 
+//test
+
+            let wakeLock = null;
+
+            // Request wake lock
+            async function requestWakeLock() {
+            try {
+                if ('wakeLock' in navigator) {
+                wakeLock = await navigator.wakeLock.request('screen');
+                console.log('Wake Lock is active');
+
+                // Re-acquire wake lock if it gets released (e.g. tab hidden)
+                wakeLock.addEventListener('release', () => {
+                    console.log('Wake Lock was released');
+                });
+                } else {
+                console.log('Wake Lock API not supported');
+                }
+            } catch (err) {
+                console.error(`${err.name}, ${err.message}`);
+            }
+            }
+
+            // Trigger on first user interaction
+            function enableWakeLockOnInteraction() {
+            const events = ['click', 'scroll', 'touchstart', 'keydown'];
+
+            const handler = async () => {
+                await requestWakeLock();
+
+                // Remove listeners after first activation (optional)
+                events.forEach(event =>
+                window.removeEventListener(event, handler)
+                );
+            };
+
+            events.forEach(event =>
+                window.addEventListener(event, handler, { once: true })
+            );
+            }
+
+            // Re-request wake lock when tab becomes visible again
+            document.addEventListener('visibilitychange', () => {
+            if (wakeLock !== null && document.visibilityState === 'visible') {
+                requestWakeLock();
+            }
+            });
+
+            // Initialize
+            enableWakeLockOnInteraction();
+
+
+
 // Zeit brechnen
 function timeformatted(time){
     const hours = Math.floor(time / 60);
