@@ -220,8 +220,9 @@ function prevPage(){
 // Searchbar
 function searchFunction(){
     const query = document.getElementById('mySearchbar').value.toLowerCase();
-    const filtered = recipes.filter(r => r.name.toLowerCase().includes(query));
-    displayRecipes(filtered)
+    activeList = recipes.filter(r => r.name.toLowerCase().includes(query));
+    currentPage = 1;
+    displayRecipes(activeList);
 }
 
 // Filter anzeigen
