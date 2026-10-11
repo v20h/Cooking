@@ -82,8 +82,6 @@ function render() {
   document.querySelector('#pageLabel').textContent = `Seite ${state.page} von ${totalPages}`;
   document.querySelector('#prevPage').disabled = state.page === 1;
   document.querySelector('#nextPage').disabled = state.page >= totalPages;
-  document.querySelector('#rerollButton').hidden = !state.random || !count;
-  randomButton.setAttribute('aria-pressed', String(state.random));
 }
 
 function reset() {
@@ -121,8 +119,7 @@ document.querySelector('#categoryTabs').addEventListener('click', event => {
   updateCategoryButtons();
   updateResults();
 });
-randomButton.addEventListener('click', () => { state.random = !state.random; updateResults(); });
-document.querySelector('#rerollButton').addEventListener('click', updateResults);
+randomButton.addEventListener('click', () => { state.random = true; updateResults(); });
 emptyState.addEventListener('click', event => {
   if (event.target.closest('#clearSearch')) reset();
   if (event.target.closest('#retryLoad')) initialize();

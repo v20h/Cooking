@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f6f0">
+  <meta name="theme-color" content="#18231e">
   <meta name="description" content="Deine Rezeptsammlung für jeden Tag. Entdecke Lieblingsgerichte für Thermomix, Airfryer und die klassische Küche.">
-  <title>Kcooks · Mit Freude kochen</title>
+  <title>Kcooks · Rezepte</title>
   <link rel="icon" href="Images/favicon.ico">
   <link rel="stylesheet" href="style.css">
   <script type="module" src="script.js"></script>
@@ -14,23 +14,11 @@
   <a class="skip-link" href="#recipes">Zu den Rezepten</a>
   <header class="site-header page-width">
     <a class="brand" href="index.html" aria-label="Kcooks Startseite"><span class="brand-mark" data-icon="leaf"></span>Kcooks<span class="brand-dot">.</span></a>
-    <div class="header-actions"><span class="header-note">Dein kleines Kochbuch</span><button id="themeToggle" class="icon-button" type="button" aria-label="Dunkles Design aktivieren"></button></div>
+    <div class="header-actions"><button id="themeToggle" class="icon-button" type="button" aria-label="Dunkles Design aktivieren"></button></div>
   </header>
   <main class="page-width">
-    <section class="hero" aria-labelledby="heroTitle">
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> Gutes Essen. Gute Laune.</p>
-        <h1 id="heroTitle">Was kochen<br>wir <em>heute?</em></h1>
-        <p class="hero-description">Für schnelle Feierabende, gemütliche Sonntage<br class="desktop-break"> und alles dazwischen. Finde dein nächstes Lieblingsgericht.</p>
-        <a class="text-link" href="#recipes">Lass dich inspirieren <span data-icon="arrow"></span></a>
-      </div>
-      <a class="hero-photo" href="detail.html?id=1&name=Miso+Udon+Nudeln" aria-label="Miso Udon Nudeln entdecken">
-        <img src="Images/Miso_Udon_Nudeln.png" alt="Miso Udon Nudeln mit knackigem Gemüse" fetchpriority="high" width="640" height="640">
-        <span class="photo-note"><span class="note-label">HEUTE AUF DEM TISCH</span><strong>Miso Udon Nudeln</strong><span>20 Minuten · viel Geschmack <span data-icon="arrow"></span></span></span>
-      </a>
-    </section>
     <section class="recipe-section" id="recipes" aria-labelledby="collectionTitle">
-      <div class="collection-heading"><div><p class="eyebrow">DEINE REZEPTSAMMLUNG</p><h2 id="collectionTitle">Etwas Leckeres für jeden Tag.</h2></div><span id="recipeTotal" class="collection-total"></span></div>
+      <div class="collection-heading"><h1 id="collectionTitle">Rezepte</h1><span id="recipeTotal" class="collection-total"></span></div>
       <div class="search-toolbar">
         <label class="search-field"><span data-icon="search"></span><span class="sr-only">Rezepte durchsuchen</span><input type="search" id="mySearchbar" placeholder="Worauf hast du Appetit?" autocomplete="off"></label>
         <button class="button filter-button" id="toggleFilters" type="button" aria-controls="filterContainer" aria-expanded="false"><span data-icon="filter"></span>Filter<span id="filterCount" class="filter-count" hidden></span></button>
@@ -42,13 +30,13 @@
           <button type="button" class="category-button" data-category="Thermomix" aria-pressed="false">Thermomix</button>
           <button type="button" class="category-button" data-category="Airfryer" aria-pressed="false">Airfryer</button>
         </div>
-        <button id="randomButton" class="random-button" type="button" aria-pressed="false"><span data-icon="shuffle"></span>Überrasch mich</button>
+        <button id="randomButton" class="random-button" type="button" title="Drei zufällige Rezepte aus deiner aktuellen Auswahl anzeigen"><span data-icon="shuffle"></span>Überrasch mich</button>
       </div>
       <div class="filter-panel" id="filterContainer" hidden>
         <div class="filter-panel-heading"><h3>Mach es zu deinem Rezept.</h3><button class="text-button" id="resetFilters" type="button">Filter zurücksetzen</button></div>
         <div id="filterGroups" class="filter-grid"></div>
       </div>
-      <div class="results-heading"><p id="resultCount" role="status" aria-live="polite">Die Rezepte werden geladen …</p><button class="text-button" id="rerollButton" type="button" hidden>Noch mal mischen <span data-icon="shuffle"></span></button></div>
+      <div class="results-heading"><p id="resultCount" role="status" aria-live="polite">Die Rezepte werden geladen …</p></div>
       <div id="imgHolder" class="recipe-grid" aria-busy="true"></div>
       <div id="emptyState" class="empty-state" hidden></div>
       <nav id="pagination" class="pagination" aria-label="Rezeptseiten" hidden>
@@ -59,6 +47,5 @@
       <noscript><p class="empty-state">Bitte aktiviere JavaScript, um die Rezeptsammlung zu durchsuchen.</p></noscript>
     </section>
   </main>
-  <footer class="site-footer page-width"><a class="brand" href="index.html">Kcooks<span class="brand-dot">.</span></a><p>Mit Liebe gesammelt. Mit Freude gekocht.</p><a href="#heroTitle">Zurück nach oben ↑</a></footer>
 </body>
 </html>

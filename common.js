@@ -47,10 +47,11 @@ export function icon(name) {
 
 export function initTheme() {
   const toggle = document.querySelector('#themeToggle');
-  let dark = false;
-  try { dark = localStorage.getItem('darkMode') === 'true'; } catch { /* Storage can be unavailable in private browsing. */ }
+  let dark = true;
+  try { dark = localStorage.getItem('darkMode') !== 'false'; } catch { /* Storage can be unavailable in private browsing. */ }
   function apply() {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    document.querySelector('meta[name="theme-color"]').content = dark ? '#18231e' : '#f7f6f0';
     toggle.innerHTML = icon(dark ? 'sun' : 'moon');
     toggle.setAttribute('aria-label', dark ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren');
     toggle.setAttribute('aria-pressed', String(dark));
