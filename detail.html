@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f6f0">
+  <title>Dein Rezept · Kcooks</title>
+  <link rel="icon" href="Images/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="detail.js"></script>
 </head>
 <body>
-    <div id="detailContainer"></div>
-
-    <script src="detail.js"></script>
+  <a class="skip-link" href="#detailContainer">Zum Rezept</a>
+  <header class="site-header page-width">
+    <a class="brand" href="index.html" aria-label="Kcooks Startseite"><span class="brand-mark" id="brandIcon"></span>Kcooks<span class="brand-dot">.</span></a>
+    <div class="header-actions"><a class="back-link" href="index.html">Alle Rezepte</a><button id="themeToggle" class="icon-button" type="button" aria-label="Dunkles Design aktivieren"></button></div>
+  </header>
+  <main class="page-width detail-page" id="detailContainer" aria-busy="true"><p role="status">Dein Rezept wird geladen …</p></main>
+  <noscript><p class="empty-state">Bitte aktiviere JavaScript, um das Rezept zu lesen.</p></noscript>
+  <footer class="site-footer page-width"><a class="brand" href="index.html">Kcooks<span class="brand-dot">.</span></a><p>Mit Liebe gesammelt. Mit Freude gekocht.</p><a href="index.html">Zur Rezeptsammlung →</a></footer>
 </body>
+</html>

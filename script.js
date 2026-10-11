@@ -1,386 +1,157 @@
+import { escapeHTML, formatTime, icon, initTheme, labels, loadRecipes, recipeURL } from './common.js';
 
-let recipes = [];
-let activeList = [];
+const filterDefinitions = [
+  ['country', 'Küche', [['normal', 'Klassisch'], ['asian', 'Asiatisch'], ['indian', 'Indisch'], ['italian', 'Italienisch'], ['mexican', 'Mexikanisch']]],
+  ['type', 'Worauf hast du Lust?', [['pasta', 'Pasta'], ['rice', 'Reis'], ['pizza', 'Pizza'], ['artisanal', 'Selbstgemacht'], ['auflauf', 'Auflauf'], ['soup', 'Suppe'], ['curry', 'Curry'], ['meat', 'Fleisch & Fisch'], ['potato', 'Kartoffeln'], ['vegetable', 'Gemüse']]],
+  ['dish', 'Auf dem Teller', [['mainDish', 'Hauptgericht'], ['sideDish', 'Beilage']]],
+  ['level', 'Schwierigkeit', Object.entries(labels.level)],
+  ['special', 'Unsere Klassiker', [['mittwochsklassiker', 'Mittwochsklassiker']]],
+];
+const pageSize = 9;
+const state = { recipes: [], matches: [], visible: [], category: '', page: 1, random: false, loaded: false };
+const grid = document.querySelector('#imgHolder');
+const emptyState = document.querySelector('#emptyState');
+const search = document.querySelector('#mySearchbar');
+const filters = document.querySelector('#filterContainer');
+const filterToggle = document.querySelector('#toggleFilters');
+const randomButton = document.querySelector('#randomButton');
+const pagination = document.querySelector('#pagination');
 
-let currentPage = 1;
-const itemsPerPage = 9;
+initTheme();
+document.querySelectorAll('[data-icon]').forEach(element => { element.innerHTML = icon(element.dataset.icon); });
+document.querySelector('#filterGroups').innerHTML = filterDefinitions.map(([field, title, options]) => `
+  <fieldset><legend>${title}</legend><div class="filter-options">${options.map(([value, label]) => `
+    <label class="filter-pill"><input type="checkbox" data-field="${field}" value="${value}"><span>${label}</span></label>
+  `).join('')}</div></fieldset>
+`).join('');
 
-
-// Daten laden
-fetch("rezepte.json")
-  .then(res => res.json())
-  .then(data => {
-      recipes = data.filter(r => r.id !== "");
-      activeList = recipes;
-      displayRecipes(activeList);
-  });
-
-
-
-//test
-
-            let wakeLock = null;
-
-            // Request wake lock
-            async function requestWakeLock() {
-            try {
-                if ('wakeLock' in navigator) {
-                wakeLock = await navigator.wakeLock.request('screen');
-                console.log('Wake Lock is active');
-
-                // Re-acquire wake lock if it gets released (e.g. tab hidden)
-                wakeLock.addEventListener('release', () => {
-                    console.log('Wake Lock was released');
-                });
-                } else {
-                console.log('Wake Lock API not supported');
-                }
-            } catch (err) {
-                console.error(`${err.name}, ${err.message}`);
-            }
-            }
-
-            // Trigger on first user interaction
-            function enableWakeLockOnInteraction() {
-            const events = ['click', 'scroll', 'touchstart', 'keydown'];
-
-            const handler = async () => {
-                await requestWakeLock();
-
-                // Remove listeners after first activation (optional)
-                events.forEach(event =>
-                window.removeEventListener(event, handler)
-                );
-            };
-
-            events.forEach(event =>
-                window.addEventListener(event, handler, { once: true })
-            );
-            }
-
-            // Re-request wake lock when tab becomes visible again
-            document.addEventListener('visibilitychange', () => {
-            if (wakeLock !== null && document.visibilityState === 'visible') {
-                requestWakeLock();
-            }
-            });
-
-            // Initialize
-            enableWakeLockOnInteraction();
-
-
-
-// Zeit brechnen
-function timeformatted(time){
-    const hours = Math.floor(time / 60);
-    const restMin = time % 60;
-    let text = '';
-    if(hours > 0) text += `${hours} Stunde${hours > 1 ? 'n' : ''} `;
-    if(restMin > 0 || hours === 0) text += `${restMin} Minute${restMin > 1 ? 'n' : ''}`;
-    return text.trim();
+function selectedFilters() {
+  const selected = {};
+  filters.querySelectorAll('input:checked').forEach(input => (selected[input.dataset.field] ??= []).push(input.value));
+  return selected;
 }
 
-
-
-// Rezepte anzeigen (mit Pagination!)
-function displayRecipes(list){
-
-    const container = document.getElementById("imgHolder");
-    container.innerHTML = "";
-
-    // Pagination berechnen
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-
-    const pageItems = list.slice(start, end);
-
-    // Wenn keine Rezepte mehr da sind → zurück auf Seite 1
-    if(pageItems.length === 0 && currentPage > 1){
-        currentPage = 1;
-        return displayRecipes(list);
-    }
-
-    // Karten anzeigen
-    pageItems.forEach(recipe => {
-        container.innerHTML += `
-          <div class="card" onclick="openDetail(${recipe.id})">
-            <img src="${recipe.image}" class="previewImg">
-
-            <div class="recipeInfo">
-              <h3>${recipe.name}</h3>
-              <p class="recipeCategory">${recipe.category}</p>
-              <p class="recipeTime">⏱ ${timeformatted(recipe.prepTime)}</p>
-            </div>
-          </div>
-        `;
-    });
-
-    renderPagination(list.length);
+function updateResults() {
+  if (!state.loaded) return;
+  const selected = selectedFilters();
+  const query = search.value.trim().toLocaleLowerCase('de');
+  state.matches = state.recipes.filter(recipe =>
+    (!state.category || recipe.category === state.category) &&
+    recipe.name.toLocaleLowerCase('de').includes(query) &&
+    Object.entries(selected).every(([field, values]) =>
+      field === 'dish' || field === 'special'
+        ? values.some(value => recipe[value] === true)
+        : values.includes(recipe[field])
+    )
+  );
+  state.page = 1;
+  const count = Object.values(selected).flat().length;
+  const badge = document.querySelector('#filterCount');
+  badge.hidden = !count;
+  badge.textContent = count;
+  state.visible = state.random ? sampleRecipes(state.matches, 3) : state.matches;
+  render();
 }
 
-
-
-// Rezeptseite öffnen
-function openDetail(id) {
-    window.open(`detail.html?id=${id}`, "_blank");
-}
-
-
-// Filter
-function showAll(){
-    setActiveButton(document.querySelector(".typeButtons:nth-child(1)"));  
-    currentPage = 1;
-    activeList = recipes;
-    displayRecipes(activeList);
-    randomFilterContainer.style.display = 'none'
-
-}
-
-function showNormal(){
-    setActiveButton(document.querySelector(".typeButtons:nth-child(2)"));  
-    currentPage = 1;
-    activeList = recipes.filter(r => r.category === "normal");
-    displayRecipes(activeList);
-    randomFilterContainer.style.display = 'none'
-
-}
-
-function showThermomix(){
-    setActiveButton(document.querySelector(".typeButtons:nth-child(3)"));  
-    currentPage = 1;
-    activeList = recipes.filter(r => r.category === "Thermomix");
-    displayRecipes(activeList);
-    randomFilterContainer.style.display = 'none'
-
-}
-
-function showAirfryer(){
-    setActiveButton(document.querySelector(".typeButtons:nth-child(4)"));  
-    currentPage = 1;
-    activeList = recipes.filter(r => r.category === "Airfryer");
-    displayRecipes(activeList);
-    randomFilterContainer.style.display = 'none'
-}
-
-function showRandom(){
-    setActiveButton(document.querySelector(".typeButtons:nth-child(5)"));  
-    if(filterContainer.style.display === 'block') {
-        filterContainer.style.display = 'none'
-    }
-    randomFilterContainer.style.display = 'block';
-    showPagination.style.display = 'none';
-
-    document.getElementById("imgHolder").innerHTML = "";
-}
-
-function setActiveButton(btn){
-    document.querySelectorAll(".typeButtons").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-}
-
-
-// Pagination Navigation
-function renderPagination(totalItems){
-
-    const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-    const nav = document.getElementById("pagination");
-
-    nav.innerHTML = `
-    <div id="showPagination">
-       <button class="paginationButtons" onclick="prevPage()" ${currentPage === 1 ? "disabled":""}>← </button>
-       <span>Seite ${currentPage} / ${totalPages}</span>
-       <button class="paginationButtons" onclick="nextPage()" ${currentPage === totalPages ? "disabled":""}> →</button>
-    </div>
-    `;
-}
-
-
-// Seitenwechsel
-function nextPage(){
-    currentPage++;
-    displayRecipes(activeList);
-
-    window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-    });
-}
-
-function prevPage(){
-    currentPage--;
-    displayRecipes(activeList);
-
-    window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-    });
-}
-
-// Searchbar
-function searchFunction(){
-    const query = document.getElementById('mySearchbar').value.toLowerCase();
-    activeList = recipes.filter(r => r.name.toLowerCase().includes(query));
-    currentPage = 1;
-    displayRecipes(activeList);
-}
-
-// Filter anzeigen
-const filterContainer = document.getElementById("filterContainer");
-const filterImg = document.getElementById("toggleFilters");
-
-filterImg.addEventListener("click", () => {
-
-  if (filterContainer.style.display === "none") {
-    filterContainer.style.display = "block";
-  } else {
-    filterContainer.style.display = "none";
+function sampleRecipes(recipes, count) {
+  const pool = [...recipes];
+  // Partial Fisher–Yates: choose distinct recipes without biased sort comparators.
+  for (let index = 0; index < Math.min(count, pool.length); index++) {
+    const other = index + Math.floor(Math.random() * (pool.length - index));
+    [pool[index], pool[other]] = [pool[other], pool[index]];
   }
-
-});
-
-// Filter auswerten
-function getCheckedValues(className) {
-  return [...document.querySelectorAll(`.${className}:checked`)]
-    .map(cb => cb.value);
+  return pool.slice(0, count);
 }
 
-// rezepte Filtern
-function filterRecipes() {
+function render() {
+  const totalPages = Math.ceil(state.visible.length / pageSize);
+  const start = (state.page - 1) * pageSize;
+  grid.innerHTML = state.visible.slice(start, start + pageSize).map(recipe => `
+    <a class="card" href="${escapeHTML(recipeURL(recipe))}">
+      <div class="card-image"><img src="${escapeHTML(recipe.image)}" alt="${escapeHTML(recipe.name)}" loading="lazy" decoding="async" width="600" height="450"><span class="recipeCategory">${escapeHTML(labels.category[recipe.category] || recipe.category)}</span></div>
+      <div class="recipeInfo"><h3>${escapeHTML(recipe.name)}</h3><div class="card-meta"><span class="recipeTime">${icon('clock')}${formatTime(recipe.prepTime)}</span><span>${escapeHTML(labels.level[recipe.level] || 'Zum Nachkochen')}</span></div></div>
+    </a>
+  `).join('');
+  emptyState.hidden = state.visible.length > 0;
+  emptyState.innerHTML = '<h3>Heute noch nichts dabei?</h3><p>Versuche einen anderen Suchbegriff oder weniger Filter.</p><button class="button" id="clearSearch" type="button">Alle Rezepte entdecken</button>';
+  const count = state.matches.length;
+  document.querySelector('#resultCount').textContent = state.random
+    ? `${state.visible.length} Ideen für dich · aus ${count} passenden Rezepten`
+    : `${count} ${count === 1 ? 'Rezept' : 'Rezepte'}${search.value.trim() ? ` für „${search.value.trim()}“` : ' zum Entdecken'}`;
+  pagination.hidden = state.random || totalPages <= 1;
+  document.querySelector('#pageLabel').textContent = `Seite ${state.page} von ${totalPages}`;
+  document.querySelector('#prevPage').disabled = state.page === 1;
+  document.querySelector('#nextPage').disabled = state.page >= totalPages;
+  document.querySelector('#rerollButton').hidden = !state.random || !count;
+  randomButton.setAttribute('aria-pressed', String(state.random));
+}
 
-document.querySelectorAll(".typeButtons").forEach(b => b.classList.remove("active"));
+function reset() {
+  search.value = '';
+  filters.querySelectorAll('input').forEach(input => { input.checked = false; });
+  state.category = '';
+  state.random = false;
+  updateCategoryButtons();
+  updateResults();
+}
 
-  const activeTypes = getCheckedValues("filterType");
-  const activeCountries = getCheckedValues("filterCountry");
-  const activeCategorys = getCheckedValues("filterCategory");
-  const activeMain = document.getElementById("filterMain").checked;
-  const activeSide = document.getElementById("filterSide").checked;
-  const activeMittwochsklassiker = document.getElementById("filterMittwochsklassiker").checked;
-
-  const gefiltert = recipes.filter(r => {
-
-    const typeMatch =
-        activeTypes.length === 0 || activeTypes.includes(r.type);
-
-    const countryMatch =
-        activeCountries.length === 0 || activeCountries.includes(r.country);
-
-    const categoryMatch =
-        activeCategorys.length === 0 || activeCategorys.includes(r.category);
-    
-    const mainMatch =
-        !activeMain || r.mainDish === true;
-
-    const sideMatch =
-        !activeSide || r.sideDish === true;
-
-    const mittwochsklassikerMatch =
-        !activeMittwochsklassiker || r.mittwochsklassiker === true;
-
-    return typeMatch && countryMatch && categoryMatch && mainMatch && sideMatch && mittwochsklassikerMatch;
+function updateCategoryButtons() {
+  document.querySelectorAll('[data-category]').forEach(button => {
+    const active = button.dataset.category === state.category;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
   });
-
-  activeList = gefiltert;  
-  currentPage = 1;
-  displayRecipes(activeList);
 }
 
-
-const allFilterInputs = document.querySelectorAll(
-  ".filterType, .filterCountry, .filterCategory, #filterMain, #filterSide, #filterMittwochsklassiker"
-);
-
-allFilterInputs.forEach(input => {
-  input.addEventListener("change", filterRecipes);
+search.addEventListener('input', updateResults);
+filters.addEventListener('change', updateResults);
+filterToggle.addEventListener('click', () => {
+  filters.hidden = !filters.hidden;
+  filterToggle.setAttribute('aria-expanded', String(!filters.hidden));
+});
+document.querySelector('#resetFilters').addEventListener('click', () => {
+  filters.querySelectorAll('input').forEach(input => { input.checked = false; });
+  updateResults();
+});
+document.querySelector('#categoryTabs').addEventListener('click', event => {
+  const button = event.target.closest('[data-category]');
+  if (!button) return;
+  state.category = button.dataset.category;
+  state.random = false;
+  updateCategoryButtons();
+  updateResults();
+});
+randomButton.addEventListener('click', () => { state.random = !state.random; updateResults(); });
+document.querySelector('#rerollButton').addEventListener('click', updateResults);
+emptyState.addEventListener('click', event => {
+  if (event.target.closest('#clearSearch')) reset();
+  if (event.target.closest('#retryLoad')) initialize();
+});
+pagination.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (!button || button.disabled) return;
+  state.page += button.id === 'nextPage' ? 1 : -1;
+  render();
+  document.querySelector('#recipes').scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
 });
 
-
-// random recipe anzeigen
-function displayRandom(){
-    const activeType = getCheckedValues("randomFilterType");
-    const activeCountry = getCheckedValues("randomFilterCountry");
-    const activeLevel = getCheckedValues("randomFilterLevel");
-    const activeCategory = getCheckedValues("randomFilterCategory");
-    const activeMain = document.getElementById("randomFilterMain").checked;
-    const activeSide = document.getElementById("randomFilterSide").checked;
-    const activeMittwochsklassiker = document.getElementById("randomFilterMittwochsklassiker").checked;
-    const displayMistake = document.getElementById("randomButtonFalseMessage");
-
-    if(activeType.length === 0 
-          && activeCountry.length === 0 
-          && activeLevel.length === 0 
-          && activeCategory.length === 0
-          && !activeMain 
-          && !activeSide 
-          && !activeMittwochsklassiker){
-
-        displayMistake.textContent = "Bitte wähle mindestens einen Filter"; 
-        return; 
-    }
-
-    displayMistake.textContent = "";
-
-    const filteredRecipes = recipes.filter(r => {
-        const typeMatch = activeType.length === 0 || activeType.includes(r.type);
-        const countryMatch = activeCountry.length === 0 || activeCountry.includes(r.country);
-        const levelMatch = activeLevel.length === 0 || activeLevel.includes(r.level);
-        const categoryMatch = activeCategory.length === 0 || activeCategory.includes(r.category);
-        
-        const mainMatch =
-            !activeMain || r.mainDish === true;  
-
-        const sideMatch =
-            !activeSide || r.sideDish === true;
-            
-        const mittwochsklassikerMatch =
-            !activeMittwochsklassiker || r.mittwochsklassiker === true;
-
-        return typeMatch && countryMatch && levelMatch && categoryMatch && mainMatch && sideMatch && mittwochsklassikerMatch;
-    });
-
-    if(filteredRecipes.length === 0){
-        displayMistake.textContent = "Es wurden keine Rezepte gefunden"; 
-        return; 
-    }
-
-    displayMistake.textContent = "";
-
-    const threeRandom = getRandomItems(filteredRecipes, 3);
-    displayRecipes(threeRandom);
-
-    showPagination.style.display = 'none'
+async function initialize() {
+  grid.setAttribute('aria-busy', 'true');
+  emptyState.hidden = true;
+  try {
+    state.recipes = await loadRecipes();
+    state.loaded = true;
+    document.querySelector('#recipeTotal').textContent = `${state.recipes.length} Lieblingsrezepte`;
+    updateResults();
+  } catch {
+    grid.innerHTML = '';
+    pagination.hidden = true;
+    document.querySelector('#resultCount').textContent = 'Die Rezepte konnten nicht geladen werden.';
+    emptyState.hidden = false;
+    emptyState.innerHTML = '<h3>Das Kochbuch macht kurz Pause.</h3><p>Bitte versuche es gleich noch einmal.</p><button class="button" id="retryLoad" type="button">Erneut versuchen</button>';
+  } finally {
+    grid.setAttribute('aria-busy', 'false');
+  }
 }
 
-function getRandomItems(arr, count){
-  const shuffled = [...arr].sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
-}
-
-// dark mode 
-document.addEventListener("DOMContentLoaded", () => {
-    const darkModeToggle = document.getElementById("darkModeImg");
-    const body = document.body;
-
-    if(localStorage.getItem("darkMode") === "true"){
-        body.classList.add("dark-mode");
-        darkModeToggle.src = "Images/sun.png";
-    }
-
-    darkModeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
-        const isDark = body.classList.contains("dark-mode");
-        localStorage.setItem("darkMode", isDark);
-        darkModeToggle.src = isDark ? "Images/sun.png" : "Images/darkmode.png";
-    });
-});
-
-// Filter schoen einblenden
-const filterContainer1 = document.getElementById("filterContainer");
-const filterImg1 = document.getElementById("toggleFilters");
-
-filterImg1.addEventListener("click", () => {
-  filterContainer1.classList.toggle("open");
-});
-
-
-
+initialize();
